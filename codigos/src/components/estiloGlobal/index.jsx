@@ -7,6 +7,9 @@ export const EstiloGlobal = createGlobalStyle`
         font-family: sans-serif;
         box-sizing: border-box;
     }
+    a{
+        text-decoration: none;
+    }
 
     :root{
         --cor-fundo: #202020;

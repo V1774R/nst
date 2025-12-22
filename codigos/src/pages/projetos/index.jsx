@@ -122,7 +122,7 @@ export const Projetos = () => {
         <AreaCards>
             {
                 projetos.map(projeto => (
-                    <CardPorjeto nome={projeto.nome} status={projeto.status} responsavel={projeto.responsavel} descricao={projeto.descricao}/>
+                    <CardPorjeto key={projeto.id} nome={projeto.nome} status={projeto.status} responsavel={projeto.responsavel} descricao={projeto.descricao}/>
                 ))
             }
         </AreaCards>

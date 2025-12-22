@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { useNavigate } from 'react-router-dom'
 
 const AreaBemvindo = styled.div`
 
@@ -13,11 +14,13 @@ const AreaBemvindo = styled.div`
 `
 
 export const BemVindo = () => {
-    return(
+    const navigate = useNavigate()
+
+    return (
         <AreaBemvindo>
             <h1>Núcleo Setorial de Tecnologia</h1>
-            <p>Bem-vindos ao nosso sistema.</p>        
-            <button>Projetos</button>
+            <p>Bem-vindos ao nosso sistema.</p>
+            <button onClick={() => { navigate("/projetos") }}>Projetos</button>
         </AreaBemvindo>
     )
 }
