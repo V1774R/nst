@@ -83,7 +83,7 @@ const Botao = styled.div`
   display: flex;
   justify-content: right;
   position: absolute;
-  top: calc(100vh - 96px);
+  top: calc(100dvh - 96px);
   left: calc(100vw - 60px);
   
   border-radius: 100%;
