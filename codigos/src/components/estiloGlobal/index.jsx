@@ -20,7 +20,7 @@ export const EstiloGlobal = createGlobalStyle`
 
     main{
         background-color: var(--cor-fundo);
-        height: calc(100vh - 80px - 40px);
+        height: calc(100dvh - 80px - 40px);
         display: flex;
         flex-direction: column;
         justify-content: center;
