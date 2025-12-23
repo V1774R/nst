@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MenuEstilizado = styled.div`
     display: flex;
@@ -11,7 +12,7 @@ const MenuEstilizado = styled.div`
         display: none;
     }
 
-    p {
+    a {
         height: 72px;
         flex-grow: 1;
         display: flex;
@@ -20,6 +21,8 @@ const MenuEstilizado = styled.div`
         flex-direction: column;
         gap: 8px;
         cursor: pointer;
+        text-decoration: none;
+        color: #000;
     }
     
 `
@@ -29,9 +32,9 @@ export const NavMenu = () => {
 
     return (
         <MenuEstilizado>
-            <p><FaHome />início</p>
-            <p><FaProjectDiagram />projetos</p>
-            <p><FaUser />sobre</p>
+            <Link to={"/"}><FaHome />início</Link>
+            <Link to={"/projetos"}><FaProjectDiagram />projetos</Link>
+            <Link to={"sobre"}><FaUser />sobre</Link>
         </MenuEstilizado>
     )
 }
