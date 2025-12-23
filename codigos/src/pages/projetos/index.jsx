@@ -5,98 +5,53 @@ import { CardPorjeto } from "../../components/cardProjeto"
 const projetos = [
   {
     id: 1,
-    nome: "Sistema de Gestão Operacional (SGO)",
-    descricao: "Plataforma para registro de ocorrências, patrulhamento, despacho e relatórios.",
-    status: "em_andamento",
+    nome: "BO-e Frontend",
+    descricao: "Interface web da plataforma BO-e, desenvolvida em React. Responsável pela experiência do usuário no registro de ocorrências e relatórios da GCMR, oferecendo navegação intuitiva, formulários dinâmicos e integração direta com os serviços do backend.",
+    status: {texto: "Implantação (MPV)", cor: "#064416"},
     responsavel: "NST-GMR",
-    tags: ["operacional", "ocorrencias", "relatorios"]
+    url: "https://boegcmr-front.homolog.app.emprel.gov.br/"
   },
   {
     id: 2,
-    nome: "Portal Institucional da Guarda Municipal",
-    descricao: "Site oficial com informações, serviços ao cidadão e seção de transparência.",
-    status: "planejado",
-    responsavel: "Comunicacao & NST-GMR",
-    tags: ["portal", "institucional", "transparencia"]
+    nome: "BO-e Backend",
+    descricao: "Serviço de backend da plataforma BO-e, construído em Spring Boot. Responsável pelo processamento de dados, autenticação, persistência em banco de dados e integração com sistemas internos da GCMR, garantindo segurança e escalabilidade para o produto.",
+    status: {texto: "Implantação (MPV)", cor: "#247438"},
+    responsavel: "NST-GMR",
+    url: "https://boegcmr-rest.homolog.app.emprel.gov.br/"
   },
   {
     id: 3,
-    nome: "Aplicativo de Comunicação Interna",
-    descricao: "App mobile com mensagens seguras, avisos e grupos de patrulha.",
-    status: "em_andamento",
+    nome: "CFIP Frontend",
+    descricao: "Interface web do sistema CFIP, desenvolvida em React. Voltada para o setor de instrução da GCMR, oferece aos agentes acesso a cursos, treinamentos e materiais didáticos, com navegação intuitiva e integração direta ao backend.",
+    status: {texto: "Em desenvolvimento", cor: "#247438"},
     responsavel: "NST-GMR",
-    tags: ["mobile", "comunicacao", "seguranca"]
+    url: "http://cfip.front.nst.vps-kinghost.net"
   },
   {
     id: 4,
-    nome: "Sistema de Controle de Frotas",
-    descricao: "Gestão de veículos, manutenção preventiva e rastreamento básico.",
-    status: "em_andamento",
-    responsavel: "Logistica & NST-GMR",
-    tags: ["frotas", "manutencao", "rastreamento"]
+    nome: "CFIP Backend",
+    descricao: "Serviço de backend do sistema CFIP, construído em Spring Boot. Responsável pela gestão de cursos, inscrições, controle de progresso dos agentes e integração com sistemas internos, garantindo segurança e escalabilidade.",
+    status: {texto: "Em processo de diagramação.", cor: "#000000"},
+    responsavel: "NST-GMR",
+    url: null
   },
   {
     id: 5,
-    nome: "Plataforma de Treinamento Online",
-    descricao: "Cursos EAD, trilhas de capacitação e avaliação de desempenho.",
-    status: "concluido",
-    responsavel: "RH & NST-GMR",
-    tags: ["ead", "treinamento", "capacitação"]
+    nome: "Portal GCMR Frontend",
+    descricao: "Interface web do Portal GCMR, desenvolvida em React. Permite aos agentes visualizar escalas, solicitar extras, realizar permutas, consultar faltas e postos de serviço, tudo em um ambiente centralizado e acessível.",
+    status: {texto: "Em desenvolvimento", cor: "#247438"},
+    responsavel: "NST-GMR",
+    url: "http://portal.front.nst.vps-kinghost.net"
   },
   {
     id: 6,
-    nome: "Sistema de Gestão de Recursos Humanos",
-    descricao: "Escalas, férias, ponto eletrônico e documentos funcionais.",
-    status: "planejado",
-    responsavel: "RH & NST-GMR",
-    tags: ["rh", "escalas", "ponto"]
-  },
-  {
-    id: 7,
-    nome: "Central de Monitoramento Integrada",
-    descricao: "Integração de câmeras, sensores e alertas em tempo real.",
-    status: "descoberta",
-    responsavel: "Operacoes & NST-GMR",
-    tags: ["monitoramento", "iot", "video"]
-  },
-  {
-    id: 8,
-    nome: "SAC Digital do Cidadão",
-    descricao: "Canal online para solicitações, denúncias e acompanhamento de protocolos.",
-    status: "em_andamento",
-    responsavel: "Ouvidoria & NST-GMR",
-    tags: ["sac", "protocolos", "cidadao"]
-  },
-  {
-    id: 9,
-    nome: "Modernização de Infraestrutura de TI",
-    descricao: "Atualização de servidores, rede, backups e políticas de segurança.",
-    status: "em_andamento",
-    responsavel: "Infra & NST-GMR",
-    tags: ["infra", "rede", "seguranca"]
-  },
-  {
-    id: 10,
-    nome: "Dashboard de Indicadores de Segurança",
-    descricao: "Painéis interativos com métricas operacionais e análise de dados.",
-    status: "concluido",
-    responsavel: "Inteligencia & NST-GMR",
-    tags: ["dados", "bi", "indicadores"]
+    nome: "Portal GCMR Backend",
+    descricao: "Serviço de backend do Portal GCMR, construído em Spring Boot. Responsável pelo processamento de dados relacionados às escalas, permutas, faltas e gestão de pessoal, garantindo integração com sistemas internos e segurança da informação.",
+    status: {texto: "Em desenvolvimento", cor: "#247438"},
+    responsavel: "NST-GMR",
+    url: "http://portal.api.nst.vps-kinghost.net"
   }
-] //simulando conexao com banco.
-
-
-//depois fazer get em curso da api do porta
-
-
-
-
-
-
-
-
-
-
+]
 
 
 
@@ -109,23 +64,20 @@ const AreaCards = styled.div`
     &::-webkit-scrollbar{
         display: none;
     }
+
+    
 `
-
-
-
-
-
 
 export const Projetos = () => {
 
-    return(
-        <AreaCards>
-            {
-                projetos.map(projeto => (
-                    <CardPorjeto key={projeto.id} nome={projeto.nome} status={projeto.status} responsavel={projeto.responsavel} descricao={projeto.descricao}/>
-                ))
-            }
-        </AreaCards>
-    )
+  return (
+    <AreaCards>
+      {
+        projetos.map(projeto => (
+          <CardPorjeto key={projeto.id} nome={projeto.nome} status={projeto.status} responsavel={projeto.responsavel} descricao={projeto.descricao} url={projeto.url} />
+        ))
+      }
+    </AreaCards>
+  )
 }
 

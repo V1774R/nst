@@ -4,6 +4,7 @@ import { Layout } from './components/layout'
 import { BemVindo } from './components/bemvindo'
 import { Sobre } from './pages/sobre'
 import { Projetos } from './pages/projetos'
+import { NotFound } from './pages/notFound'
 
 function App() {
   
@@ -14,7 +15,8 @@ function App() {
           <Route path={"/"} element={<Layout />}>
             <Route index element={<BemVindo />}></Route>
             <Route path='/sobre' element={<Sobre />}></Route>    
-            <Route path='/projetos' element={<Projetos />}></Route>         
+            <Route path='/projetos' element={<Projetos />}></Route>
+            <Route path='*' element={<NotFound />}></Route>         
           </Route>
         </Routes>
       </BrowserRouter>
