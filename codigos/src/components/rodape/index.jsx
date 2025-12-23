@@ -5,9 +5,13 @@ const RodapeEstilizado = styled.div`
     height: 40px;
     background-color: var(--cor-rodape);
     color: #1b1b1b;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+
+    @media(min-width: 700px){
+        display: flex;
+    }
 `
 
 

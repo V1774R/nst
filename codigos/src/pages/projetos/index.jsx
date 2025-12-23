@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { CardPorjeto } from "../../components/cardProjeto"
-import { useRef } from "react"
-import { FaArrowCircleDown } from "react-icons/fa"
+import { useRef, useState } from "react"
+import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa"
 
 
 const projetos = [
@@ -83,33 +83,69 @@ const Botao = styled.div`
   display: flex;
   justify-content: right;
   position: absolute;
-  top: calc(100dvh - 96px);
-  left: calc(100vw - 60px);
-  
+  top: calc(100dvh - 130px);
+  left: calc(100vw - 70px);
+  background-color: #ffffff50;
   border-radius: 100%;
   transition: 500ms;
   &:hover{
     scale: 1.2;
     transition: 500ms;
   }
+
+  @media(min-width: 700px){
+    top: calc(100dvh - 96px);
+    left: calc(100vw - 60px);
+  }
 `
 
 export const Projetos = () => {
   const areaCardsRef = useRef()
+  const [subir, setSubir] = useState(false)
+  const [rolou, setRolou] = useState(false)
+
+  const voltarTopo = () => {
+    setSubir(false)
+    setRolou(false)
+  }
 
   const rolar = () => {
-    areaCardsRef.current.scrollTo({
-      top: areaCardsRef.current.scrollHeight,
-      behavior: "smooth"
-    })
+    if (!subir) {
+      areaCardsRef.current.scrollTo({
+        top: areaCardsRef.current.scrollHeight,
+        behavior: "smooth"
+      })
+    } else {
+      areaCardsRef.current.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    }
 
+  }
+
+  const controlarBotao = () => {
+    const div = areaCardsRef.current;
+    const scrollTop = div.scrollTop;
+    const scrollHeight = div.scrollHeight;
+    const clientHeight = div.clientHeight;
+
+    if (scrollTop === 0) {
+      // está no topo → seta para baixo
+      setSubir(false)
+    } else {
+      // qualquer outra posição (meio ou fim) → seta para cima
+      setSubir(true)
+    }
   }
 
 
   return (
-    <AreaCards ref={areaCardsRef}>
+    <AreaCards ref={areaCardsRef} onScroll={() => { controlarBotao() }}>
       <Botao onClick={rolar} >
-        <FaArrowCircleDown size={40} color="#1b1b1bc0" />
+        {
+          !subir ? (<FaArrowCircleDown onClick={() => { voltarTopo() }} size={40} color="#1b1b1bc0" />) : (<FaArrowCircleUp size={40} color="#1b1b1bc0" onClick={() => { setSubir(false) }} />)
+        }
       </Botao>
 
       {

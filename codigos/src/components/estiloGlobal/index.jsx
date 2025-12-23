@@ -20,12 +20,16 @@ export const EstiloGlobal = createGlobalStyle`
 
     main{
         background-color: var(--cor-fundo);
-        height: calc(100dvh - 80px - 40px);
+        height: calc(100dvh - 80px - 72px);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 16px;
+
+        @media(min-width: 700px){
+            height: calc(100dvh - 80px - 40px);
+        }
     }
     
     button{
