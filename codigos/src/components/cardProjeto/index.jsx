@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const Card = styled.div`
-    width: 100%;
+    width: 340px;
     background-color: #cacaca ;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,7 @@ const Card = styled.div`
         font-weight: bold;
         font-size: 0.8rem;
     }
+    
 `
 
 const Nome = styled.h1`
