@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const MenuEstilizado = styled.div`
     display: flex;
@@ -22,19 +23,20 @@ const MenuEstilizado = styled.div`
         gap: 8px;
         cursor: pointer;
         text-decoration: none;
-        color: #000;
+        color: #141414;
+        font-size: 0.9rem;
     }
     
 `
 
 export const NavMenu = () => {
-
+    const [tamanhoIcone, setTamanhoIcone] = useState(22)
 
     return (
         <MenuEstilizado>
-            <Link to={"/"}><FaHome />início</Link>
-            <Link to={"/projetos"}><FaProjectDiagram />projetos</Link>
-            <Link to={"sobre"}><FaUser />sobre</Link>
+            <Link to={"/"}><FaHome size={tamanhoIcone}/>início</Link>
+            <Link to={"/projetos"}><FaProjectDiagram size={tamanhoIcone} />projetos</Link>
+            <Link to={"sobre"}><FaUser size={tamanhoIcone} />sobre</Link>
         </MenuEstilizado>
     )
 }

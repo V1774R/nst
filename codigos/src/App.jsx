@@ -5,6 +5,7 @@ import { BemVindo } from './components/bemvindo'
 import { Sobre } from './pages/sobre'
 import { Projetos } from './pages/projetos'
 import { NotFound } from './pages/notFound'
+import { EmConstrucao } from './components/emConstrucao'
 
 function App() {
   
@@ -16,7 +17,7 @@ function App() {
             <Route index element={<BemVindo />}></Route>
             <Route path='/sobre' element={<Sobre />}></Route>    
             <Route path='/projetos' element={<Projetos />}></Route>
-            <Route path='*' element={<NotFound />}></Route>         
+            <Route path='*' element={<EmConstrucao />}></Route> {/* Mudar para NOTFOUND após a construção das paginas restantes. */}        
           </Route>
         </Routes>
       </BrowserRouter>

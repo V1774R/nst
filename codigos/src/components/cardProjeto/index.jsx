@@ -2,12 +2,12 @@ import styled from "styled-components"
 
 const Card = styled.div`
     width: 340px;
-    background-color: #cacaca ;
+    background-color: rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 16px;
-    border-radius: 4px;
+    padding: 26px;
+    border-radius: 8px;
+    border: 1px solid #868686;    
     a{
         margin: auto;
     }
@@ -15,28 +15,42 @@ const Card = styled.div`
         margin: auto;
         font-weight: bold;
         font-size: 0.8rem;
+        color: #c0c0c0;
     }
     
 `
 
-const Nome = styled.h1`
+const Nome = styled.p`
     font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: bolder;
+
     
 `
-
-const Descricao = styled.p`
-    text-align: justify;
-    font-size: 0.9rem;
-`
-
-const Status = styled.p`
-    font-size: 0.9rem;
-    font-weight: bold;
-`
-
 const Responsavel = styled.p`
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    color: #afafaf;
+`
+const Status = styled.p`
+    font-size: 0.8rem;
+    margin-bottom: 16px;
     font-weight: bold;
 `
+const Descricao = styled.p`
+    margin: auto;
+    width: 300px;
+    text-align: justify;
+    font-size: 0.78rem;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    color: #afafaf;
+    
+;
+`
+
+
 export const CardPorjeto = ({nome, status, responsavel, descricao, url}) => {
     return (
         <Card>

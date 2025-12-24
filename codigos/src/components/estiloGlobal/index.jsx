@@ -15,7 +15,7 @@ export const EstiloGlobal = createGlobalStyle`
         --cor-fundo: #202020;
         --cor-cabecalho: #f5f5f5;
         --cor-rodape: #f5f5f5;
-        --cor-dourado: #b69c08;
+        --cor-botoes: #030303;
     }
 
     main{
@@ -26,6 +26,7 @@ export const EstiloGlobal = createGlobalStyle`
         justify-content: center;
         align-items: center;
         padding: 16px;
+        overflow: auto;
 
         @media(min-width: 700px){
             height: calc(100dvh - 80px - 40px);

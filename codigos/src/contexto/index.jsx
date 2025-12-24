@@ -4,8 +4,10 @@ export const ContextoGlobal = createContext()
 
 const reducer = (state, action) => {
     switch(action.type){
-        case "":
-            return {} 
+        case "ALTERNAR_MENU":
+            return {...state, menu: !state.menu}
+        case "FECHAR_MENU":
+            return {...state, menu: false}
         default:
             return state
     }
@@ -14,7 +16,7 @@ const reducer = (state, action) => {
 export const ContextoGlobalProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(reducer, {
-
+        menu: false
     })
 
     return(
