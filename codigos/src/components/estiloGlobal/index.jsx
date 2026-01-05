@@ -38,7 +38,7 @@ export const EstiloGlobal = createGlobalStyle`
         padding: 12px;
         border: none;
         border-radius: 8px;
-        background-color: black;
+        background-color: #4e4e4e;
         color: white;
         transition: 500ms;
         cursor: pointer;

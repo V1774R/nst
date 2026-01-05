@@ -51,14 +51,13 @@ const Descricao = styled.p`
 `
 
 
-export const CardPorjeto = ({nome, status, responsavel, descricao, url}) => {
+export const CardPorjeto = ({nome, status, responsavel, descricao, url, imagem}) => {
     return (
         <Card>
             <Nome> {nome} </Nome>
             <Responsavel>Responsavel: {responsavel}</Responsavel>
             <Status style={{color: status.cor}}>Status: {status.texto}</Status>
-            
-            <hr />
+            <img src={imagem ? `/imgs/${imagem}.jpeg` : "imgs/construcao.png"} alt="" />
             <Descricao>
                 {descricao}
             </Descricao>
